@@ -1,0 +1,10 @@
+<% provide(:title, 'Added Event') %>
+<div class="center">
+  <p><strong>Event:</strong></p>
+  <p>
+    <%= @event.entry %>
+  </p>
+
+<%= link_to 'Back', events_path, class: "btn btn-small" %>
+<%= link_to 'Edit', edit_event_path(@event), class: "btn btn-small btn-primary" %>
+</div>

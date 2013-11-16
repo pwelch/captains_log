@@ -1,0 +1,22 @@
+<!-- Need to figure out the bootstrap and rails field size for entry -->
+<%= form_for @event do |f| %>
+  <% if @event.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited
+        this event from being saved:</h2>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+  <%= f.text_area :entry, :size => "10x10" %>
+  </p>
+
+  <p>
+    <%= f.submit class: "btn btn-small btn-primary" %>
+    <%= link_to "Cancel", root_path, class: "btn btn-small" %>
+  </p>
+<% end %>

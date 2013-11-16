@@ -1,0 +1,21 @@
+<% provide(:title, 'All Events') %>
+<div class="center">
+<table class="table table-hover">
+    <tr>
+      <th>Entry</th>
+      <th>Created</th>
+    </tr>
+
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.entry %></td>
+      <td><%= event.created_at %></td>
+      <td><%= link_to 'Show', event %></td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Delete', event_path(event),
+        method: :delete, data: { confirm: 'Are you sure?' }
+      %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
