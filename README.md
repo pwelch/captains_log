@@ -10,7 +10,7 @@ infrastructure changes.
 `bundle install`
 
 `rake db:migrate`
- 
+`rake db:test:prepare` 
 `bundle exec guard`
 
 ## Configuration
