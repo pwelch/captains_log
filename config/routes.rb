@@ -10,6 +10,9 @@ CaptainsLog::Application.routes.draw do
     end
   end
 
+  get  '/api', to: 'api/v1/events#index'
+  post '/api', to: 'api/v1/events#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
