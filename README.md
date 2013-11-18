@@ -13,6 +13,23 @@ infrastructure changes.
 `rake db:test:prepare` 
 `bundle exec guard`
 
+### API Development
+
+Generate API Key from Rails Console:
+
+```
+rails console
+
+ApiKey.create!
+```
+
+Posting to API
+```
+curl -X POST -H "Content-Type: application/json" \
+     -H 'Authorization: Token token="TOKEN"' \
+     -d '{"event":{"entry":"ENTRY TEXT"}}' http://localhost:3000/api/v1/events
+```
+
 ## Configuration
 
 ## Deployment
