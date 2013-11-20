@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "EventPages" do
+describe "Event Pages" do
   describe "GET /event_pages" do
-    xit "works! (now write some real specs)" do
+    it "returns http success" do
       get events_path
       response.status.should be(200)
     end
