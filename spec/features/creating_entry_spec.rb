@@ -2,8 +2,6 @@ require 'spec_helper'
 
 feature 'Creating Entries' do
   before do
-    #FactoryGirl.create(:project, name: "Internet Explorer")
-
     visit '/'
     click_link "Events"
     click_link "Add Event"
