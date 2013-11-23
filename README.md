@@ -10,7 +10,8 @@ infrastructure changes.
 `bundle install`
 
 `rake db:migrate`
-`rake db:test:prepare` 
+`rake db:test:prepare && rake db:migrate RAILS_ENV=test` 
+`db:populate`
 `bundle exec guard`
 
 ### API Development
