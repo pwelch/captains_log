@@ -4,7 +4,8 @@ feature 'Showing Entries' do
   before do
     FactoryGirl.create(:event, entry: "Example entry for event")
 
-    visit '/'
+    visit root_path
+    user_login
     click_link 'Show Events'
   end
 

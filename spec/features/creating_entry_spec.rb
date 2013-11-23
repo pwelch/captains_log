@@ -2,7 +2,9 @@ require 'spec_helper'
 
 feature 'Creating Entries' do
   before do
-    visit '/'
+    visit root_path
+
+    user_login
     click_link "Events"
     click_link "Add Event"
   end
