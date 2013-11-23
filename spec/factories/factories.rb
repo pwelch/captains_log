@@ -9,6 +9,10 @@ FactoryGirl.define do
     password_confirmation "password123"
   end
 
+  factory :api_key do
+    access_token "4abbb4841f1e79c09b8b7e9d570c1b3a"
+  end
+
   # Add admin feature
   # factory :admin do
   #  # pending
