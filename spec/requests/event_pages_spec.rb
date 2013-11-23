@@ -3,8 +3,11 @@ require 'spec_helper'
 describe "Event Pages" do
   describe "GET /event_pages" do
     it "returns http success" do
-      get events_path
-      response.status.should be(200)
+      visit root_path
+      user_login
+
+      get_via_redirect events_path
+      expect(response.status).to be(200)
     end
   end
 end
