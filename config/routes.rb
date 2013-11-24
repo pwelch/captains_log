@@ -3,6 +3,7 @@ CaptainsLog::Application.routes.draw do
   root 'static_pages#home'
   match '/about', to: 'static_pages#about', via: 'get'
   resources :events
+  resources :api_keys, only: [:index, :new, :create, :destroy]
 
   # API V1
   namespace :api, defaults: {format: 'json'} do
