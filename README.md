@@ -1,5 +1,5 @@
 
-CLog is a Rails application that provides a central place to log
+Captain's Log is a Rails application that provides a central place to log
 infrastructure changes.
 
 ## Development
