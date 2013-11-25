@@ -1,0 +1,23 @@
+<% provide(:title, 'API Keys') %>
+<div class="center">
+<table class="table table-hover">
+    <tr>
+      <th>API Key</th>
+      <th>Description</th>
+      <th>Created</th>
+    </tr>
+
+  <% @api_keys.each do |api_key| %>
+    <tr>
+      <td><%= api_key.access_token %></td>
+      <td><%= api_key.description %></td>
+      <td><%= api_key.created_at %></td>
+      <td><%= link_to 'Delete', api_key_path(api_key),
+        method: :delete, data: { confirm: 'Are you sure?' }
+      %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
+<%= link_to "Add API Key", new_api_key_path, class: "btn btn-success btn-small" %>
