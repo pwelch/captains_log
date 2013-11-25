@@ -27,6 +27,6 @@ class ApiKeysController < ApplicationController
 
   private
     def api_key_params
-      params.permit(params[:description])
+      params.require(:api_key).permit(:description)
     end
 end

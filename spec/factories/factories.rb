@@ -11,6 +11,7 @@ FactoryGirl.define do
 
   factory :api_key do
     access_token "4abbb4841f1e79c09b8b7e9d570c1b3a"
+    description  "Factory API Key"
   end
 
   # Add admin feature
