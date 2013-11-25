@@ -1,7 +1,8 @@
 class ApiKey < ActiveRecord::Base
   before_create :generate_access_token
 
- # validates :description, presence: true
+  validates :description, presence: true
+
 private
 
   def generate_access_token
