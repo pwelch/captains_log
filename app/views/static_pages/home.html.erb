@@ -1,7 +1,28 @@
 <% provide(:title, 'Home') %>
+<% if user_signed_in? %>
+<div class="center">
+  <h2>Latest Events</h2>
+  <table class="table table-hover">
+    <tr>
+      <th>Entry</th>
+      <th>Created</th>
+    </tr>
+
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.entry %></td>
+        <td><%= event.created_at %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<%= link_to "More Events", events_path, class: "btn btn-link" %>
+<% else %>
 <div class="center hero-unit">
   <h1>Captain's Log</h1>
   <p>
     Infrastructure Change Log
   </p>
 </div>
+<% end %>
