@@ -18,12 +18,22 @@ module Api
       end
 
       def create
+        default_params
+
         respond_with Event.create(event_params)
       end
 
       private
        def event_params
-         params.require(:event).permit(:entry)
+         params.require(:event).permit(:entry, :entry_type, :hostname, :source_ip, :user)
+       end
+
+       # Set default params
+       def default_params
+         params[:event][:entry_type] ||= 'api'
+         params[:event][:user] ||= 'api'
+         params[:event][:hostname] ||= request.remote_ip
+         params[:event][:source_ip] = request.remote_ip
        end
 
        def restrict_access

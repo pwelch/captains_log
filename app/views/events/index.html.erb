@@ -7,7 +7,7 @@
       <th>Created</th>
     </tr>
 
-  <% @events.each do |event| %>
+  <% @events.reverse.each do |event| %>
     <tr>
       <td><%= event.entry %></td>
       <td><%= event.created_at %></td>
@@ -19,3 +19,4 @@
   <% end %>
 </table>
 </div>
+<%= link_to "Add Event", new_event_path, class: "btn btn-success btn-small" %>

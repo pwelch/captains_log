@@ -1,10 +1,15 @@
-<% provide(:title, 'Added Event') %>
+<% provide(:title, 'Event') %>
 <div class="center">
-  <p><strong>Event:</strong></p>
-  <p>
-    <%= @event.entry %>
-  </p>
-
-<%= link_to 'Back', events_path, class: "btn btn-small" %>
-<%= link_to 'Edit', edit_event_path(@event), class: "btn btn-small btn-primary" %>
+  <h2>Event</h2>
+  <div class="row" style="text-align:left">
+    <p><strong>Message:</strong>      <%= @event.entry %></p>
+    <p><strong>Type:</strong>         <%= @event.entry_type %></p>
+    <p><strong>Hostname:</strong>     <%= @event.hostname %></p>
+    <p><strong>Source IP:</strong>    <%= @event.source_ip %></p>
+    <p><strong>System User:</strong>  <%= @event.user %></p>
+    <p><strong>Timestamp:</strong>    <%= @event.created_at %></p>
+  </div>
+  <br>
+<%= link_to 'Back', events_path, class: "btn" %>
+<%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>
 </div>
