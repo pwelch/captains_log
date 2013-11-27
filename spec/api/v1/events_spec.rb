@@ -30,6 +30,15 @@ describe "/api/v1/events", :type => :api do
       expect(response.status).to eq(201)
     end
 
+    it 'should populate with default parameters' do
+      body = {event: {entry: "Test entry"}}.to_json
+      post "/api/v1/events", body, auth_header
+
+      created_event = JSON.parse(response.body)
+      expect(created_event['user']).to eq('api')
+      expect(created_event['entry_type']).to eq('api')
+    end
+
     it 'should receive status 401 when creating an event when not authenticated' do
       post "/api/v1/events", body
       expect(response.status).to eq(401)
