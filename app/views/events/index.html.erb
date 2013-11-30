@@ -1,5 +1,6 @@
 <% provide(:title, 'All Events') %>
 <h2>Events</h2>
+<p><%= link_to "Add Event", new_event_path, class: "btn btn-success btn-small" %></p>
 <div class="center">
 <table class="table table-hover">
     <tr>
@@ -7,7 +8,7 @@
       <th>Created</th>
     </tr>
 
-  <% @events.reverse.each do |event| %>
+  <% @events.each do |event| %>
     <tr>
       <td><%= event.entry %></td>
       <td><%= event.created_at %></td>
@@ -19,4 +20,4 @@
   <% end %>
 </table>
 </div>
-<%= link_to "Add Event", new_event_path, class: "btn btn-success btn-small" %>
+<%= will_paginate@events %>
