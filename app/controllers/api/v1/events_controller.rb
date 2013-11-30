@@ -23,7 +23,9 @@ module Api
 
       private
        def event_params
-         default_params.merge params.require(:event).permit(:entry, :entry_type, :hostname, :source_ip, :user)
+         default_params.merge params.require(:event).permit(
+           :entry, :entry_type, :hostname, :source_ip, :user
+         )
        end
 
        # Set default params

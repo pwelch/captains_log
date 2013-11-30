@@ -45,6 +45,16 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:entry)
+     default_params.merge params.require(:event).permit(
+       :entry, :entry_type, :hostname, :source_ip, :user
+     )
+    end
+
+    # Set default params
+    def default_params
+      {entry_type: 'webui',
+       user: current_user.email,
+       hostname: 'webui',
+       source_ip: 'webui'}
     end
 end
