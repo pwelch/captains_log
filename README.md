@@ -4,7 +4,7 @@ infrastructure changes.
 
 ## Development
 
-* ruby-2.0.0-p247
+* ruby-2.0.0-p353
 * Rails 4.0.1
 
 `bundle install`
@@ -37,13 +37,3 @@ curl -X POST -H "Content-Type: application/json" \
 
 Still under development. Deploy instructions will be written when
 application is production ready.
-
-# TO DO
-
-If `undefined method `encrypted_password=' for `
-In the rails console run, this will tell you if the migration has run
-
-User.new.respond_to?(:encrypted_password=)
-This should return true, if not do
-
-bundle exec rake db:migrate:reset
