@@ -1,6 +1,7 @@
-
 Captain's Log is a Rails application that provides a central place to log
 infrastructure changes.
+
+[![Build Status](https://secure.travis-ci.org/pwelch/captains_log.png)](http://travis-ci.org/pwelch/captains_log)
 
 ## Development
 
