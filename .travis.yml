@@ -9,3 +9,4 @@ deploy:
   api_key:
     secure: "B6AgzJFIRytdDGvVGHXx6O+GOStyNMdMLxnlrBjVBuoQLQAvG//+w8INJtmjsaMLsTPT2oDaiNkmyCZhOlFO2yOHyk8v6NKd3ejs7rMouwvhgGEbBEYdNVkLu6ghg6rn2fTGbUpKN9m0HW0uvkBZEXO43uUvwdhz+SSHYhM6fto="
   app: "demo-captains-log"
+  run: "rake db:setup"
