@@ -15,6 +15,15 @@ infrastructure changes.
 - `rake db:seed` 
 - `bundle exec guard`
 
+## Demo
+
+[demo.clogapp.com](http://demo.clogapp.com/)
+
+```bash
+username: user@example.com
+password: password123
+```
+
 ### API Development
 
 Generate API Key from Rails Console:
