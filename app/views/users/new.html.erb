@@ -1,0 +1,36 @@
+<% provide(:title, 'New User') %>
+<h2>New User</h2>
+<div class="center">
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+        this event from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+  <%= f.label :email %> <br>
+  <%= f.text_field :email %>
+  </p>
+
+  <p>
+  <%= f.label :password %> <br>
+  <%= f.password_field :password %>
+  </p>
+
+  <p>
+  <%= f.label :confirm_password %>
+  <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit class: "btn btn-small btn-primary" %>
+    <%= link_to "Cancel", users_path, class: "btn btn-small" %>
+  </p>
+<% end %>
+</div>

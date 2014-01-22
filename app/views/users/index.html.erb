@@ -1,0 +1,21 @@
+<% provide(:title, 'All Users') %>
+<h2>Users</h2>
+<p><%= link_to "Add User", new_user_path, class: "btn btn-success btn-small" %></p>
+<div class="center">
+<table class="table table-hover">
+    <tr>
+      <th>User</th>
+      <th>Created</th>
+    </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.created_at %></td>
+      <td><%= link_to 'Delete', user_path(user),
+        method: :delete, data: { confirm: 'Are you sure?' }
+      %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
