@@ -1,11 +1,12 @@
 CaptainsLog::Application.routes.draw do
-  devise_for :users
-  root 'static_pages#home'
-  match '/about', to: 'static_pages#about', via: 'get'
-  resources :events
-  resources :api_keys, only: [:index, :new, :create, :destroy]
+  ## Devise
+  devise_for :users, :skip => [:registrations]
+  as :user do
+    get 'users/edit', to: 'devise/registrations#edit', as: 'edit_user_registration'
+    put 'users', to: 'devise/registrations#update', as: 'user_registration'
+  end
 
-  # API V1
+  ## API V1
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :events
@@ -15,58 +16,14 @@ CaptainsLog::Application.routes.draw do
   get  '/api', to: 'api/v1/events#index'
   post '/api', to: 'api/v1/events#create'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  ## Events
+  resources :events
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :users
+  ## API Keys
+  resources :api_keys, only: [:index, :new, :create, :destroy]
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  ## Static Pages
+  root 'static_pages#home'
+  match '/about', to: 'static_pages#about', via: 'get'
 end
