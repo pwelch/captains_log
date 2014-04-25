@@ -5,6 +5,11 @@ class EventsController < ApplicationController
     @events = Event.paginate(:page => params[:page]).order('created_at DESC')
   end
 
+  def search
+    @events = Event.paginate(:page => params[:page]).where('entry LIKE ?', "%#{params[:query].to_s}%")
+    render 'index'
+  end
+
   def new
     @event = Event.new
   end
