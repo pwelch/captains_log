@@ -3,6 +3,8 @@ require 'spec_helper'
 describe ApiKey do
   let(:api_key) { ApiKey.create!(description: "Test API Key") }
 
+  it { should validate_presence_of(:description) }
+
   it "create a new instance given valid attributes" do
     expect(api_key.save).to be_true
   end

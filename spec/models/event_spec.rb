@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Event do
+  it { should validate_presence_of(:entry) }
 
   it "should validate the presence of an event entry" do
     event = Event.new(entry: "Text event entry")
