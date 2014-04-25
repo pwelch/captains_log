@@ -17,6 +17,7 @@ CaptainsLog::Application.routes.draw do
   post '/api', to: 'api/v1/events#create'
 
   ## Events
+  get '/events/search/', to: 'events#search'
   resources :events
 
   resources :users
