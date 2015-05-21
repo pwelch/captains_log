@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ApiKey do
   let(:api_key) { ApiKey.create!(description: "Test API Key") }
@@ -6,12 +6,12 @@ describe ApiKey do
   it { should validate_presence_of(:description) }
 
   it "create a new instance given valid attributes" do
-    expect(api_key.save).to be_true
+    expect(api_key.save).to eq true
   end
 
   it "should not create a new instance given invalid attributes" do
     invalid_api_key = ApiKey.new
-    expect(invalid_api_key.save).to be_false
+    expect(invalid_api_key.save).to eq false
   end
 
   it "access_token should be a String object" do

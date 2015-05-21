@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 def user_login
   click_link "Login"
