@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.6'
 
-gem 'rails', '4.0.1'
+gem 'rails', '4.1.10'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
@@ -24,7 +24,7 @@ group :test do
   gem 'brakeman', :require => false
 end
 
-gem 'sass-rails', '4.0.1'
+gem 'sass-rails', '5.0.3'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.0.4'
