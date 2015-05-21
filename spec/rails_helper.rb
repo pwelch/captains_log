@@ -1,6 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
+require 'spec_helper'
 require 'rspec/rails'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -12,14 +13,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
-  # Use color in STDOUT
-  config.color = true
-
-  # Use color not only in STDOUT but also in pagers and files
-  config.tty = true
-
-  # Use the specified formatter
-  config.formatter = :documentation # :progress, :html, :textmate
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
