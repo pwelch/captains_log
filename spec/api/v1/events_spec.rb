@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "/api/v1/events", :type => :api do
+describe Api::V1::EventsController, :type => :request do
   let(:token) { FactoryGirl.create(:api_key) }
   let(:auth_header) {
     {

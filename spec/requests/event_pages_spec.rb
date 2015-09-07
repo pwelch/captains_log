@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "Event Pages" do
   describe "GET /event_pages" do
